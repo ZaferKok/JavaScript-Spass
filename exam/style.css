@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(230, 230, 230);
+    background-image:url("pics/orange.jpg");
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    min-height: 100vh;
+}
+
+.question-container {
+    background-color: rgb(255, 252, 205);
+    width: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+.question-header {
+    padding: 4rem;
+}
+
+h2 {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+ul li{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+ul li label{
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    background-color: #18dcff;
+    color: blue;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+
+button:hover{
+    background-color: #00ccff;
+}
+
+button:focus{
+    background-color: chocolate;
+}

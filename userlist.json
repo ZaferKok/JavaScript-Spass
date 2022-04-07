@@ -1,0 +1,39 @@
+{
+    "records": [
+        {
+            "username": "excalibur",
+            "firstname": "Eric",
+            "lastname": "Johnson",
+            "password": "ex111",
+            "adress": "Excalibur street 1, 11111 Mars"
+        },
+        {
+            "username": "robocop",
+            "firstname": "Richard",
+            "lastname": "Cruz",
+            "password": "ro222",
+            "adress": "Robots street 2, 22222 Jupiter"
+        },
+        {
+            "username": "sniper",
+            "firstname": "Smith",
+            "lastname": "Will",
+            "password": "sn333",
+            "adress": "Sniper street 3, 33333 Pluton"
+        },
+        {
+            "username": "flyingobject",
+            "firstname": "Fina",
+            "lastname": "Axe",
+            "password": "fi444",
+            "adress": "Ufo street 4, 44444 Uranus"
+        },
+        {
+            "username": "phantom",
+            "firstname": "Philips",
+            "lastname": "Bally",
+            "password": "Ph555",
+            "adress": "Atmosphere street 5, 55555 Neptune"
+        }
+    ]
+}

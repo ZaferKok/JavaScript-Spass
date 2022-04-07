@@ -1,0 +1,64 @@
+Aşağıdaki fonksiyonlar kullanılarak Register yapılabilir.
+Bu şekilde kullanıcıdan aldığımız bilgiler JSON olarak kaydedilebilir.
+
+
+function neuKundeanlegen(){
+let neuKunde = {
+kundenNummer : random(100000,999999),
+vorname : form.querySelector("#vorname").value,
+nachname : form.querySelector("#nachname").value,
+username : form.querySelector("#username").value,
+kontostand : form.querySelector("#menge").value,
+passwort : random(1000, 9999),
+kreditschulden : 0
+}
+form.querySelector("#vorname").value = "";
+form.querySelector("#nachname").value = "";
+form.querySelector("#username").value = "";
+form.querySelector("#menge").value = "";
+
+console.log(JSON.stringify(neuKunde));
+return neuKunde;
+}
+---------------------------------------------------------------
+
+function anzeigenForm(){
+let xhr = new XMLHttpRequest();
+xhr.onload = function() {
+if(xhr.status != 200) {
+container.textContent = "OOOps";
+return;
+} 
+let data = xhr.responseXML.querySelector(".register");
+form.innerHTML = data.innerHTML;
+form.onsubmit = function() {
+let neuKunde = neuKundeanlegen();
+json.kunden.push(neuKunde);
+sendKunde(JSON.stringify(json));
+return false;
+};
+};
+
+------------------------------------------------------------------
+xhr.open("GET", "register.html");
+xhr.responseType = "document";
+xhr.send();
+}
+
+function sendKunde(jsonString) {
+let xhr = new XMLHttpRequest();
+xhr.onload = function() {
+if(xhr.status != 200) return;
+};
+xhr.open("POST","./script.php");
+xhr.send(jsonString);
+}
+
+-------------------------------------------------------------------
+<?php
+$myPost = file_get_contents('php://input');
+$myFile = fopen('kunden.json', 'w');
+fwrite($myFile,$myPost);
+fclose($myFile);
+echo $myPost;
+?>
